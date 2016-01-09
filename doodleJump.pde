@@ -1,3 +1,20 @@
+PImage img;
+
+void setup(){
+  size (320, 480);
+  img = loadImage ("doodle jump title screen.png");
+}
+
+void draw(){
+  image (img, 0, 0);
+  
+}
+
+
+/*
+
+
+
 void setup(){
       size(360,550);
       background(248,240,234);
@@ -56,3 +73,5 @@ class Doodle{
         }
                
     }
+    
+    */
