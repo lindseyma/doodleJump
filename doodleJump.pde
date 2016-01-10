@@ -13,13 +13,16 @@ void show(){
        startGame();
      }
 }//show calls the right method for each display
-
+Doodle d= new Doodle(145, 450);
  void setup(){
       size (320, 480);
         /*img = loadImage ("doodle jump title screen.png");
         playbutton = loadImage("play.png");
         playonbutton = loadImage("play-on.png");*/
-      }          
+      /*if (screen=="game"){
+        Doodle d= new Doodle(width/2-15, height - 30);
+      }*/
+    }          
         
 void draw(){
     show();
@@ -29,7 +32,8 @@ void draw(){
         img = loadImage ("doodle jump title screen.png");
         playbutton = loadImage("play.png");
         playonbutton = loadImage("play-on.png");
-        image (img, 0, 0);
+        //image (img, 0, 0);
+        background(img);
           image (playbutton, 82, 190);
           
             if (mousePressed && mouseX > 82 && mouseX < 193 && mouseY > 194 && mouseY < 232){
@@ -41,11 +45,12 @@ void draw(){
     }
     
     void startGame(){
-      Doodle d= new Doodle(160,520);
       img = loadImage ("background.png");
-      image(img, 0, 0);
+      img.resize(320,480);
+      background(img);
+      //moved line below to the setup
+      //Doodle d= new Doodle(width/2-15, height - 30);
       d.display();
-      d.move();
     }
        
     /*void startgame(){ 
