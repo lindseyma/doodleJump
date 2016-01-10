@@ -31,26 +31,12 @@ class Doodle{
        rect(x, y, 30, 30);
         println(left);
          if(left){
-              x-=1;
+              x-=20;
             }
             if(right){
-              x+=1;
+              x+=20;
             }
         println(x + "," + y);
-        }
-     
-       
-       
-       
-       //void key
-       
-       void move(){
-            if(left){
-              x-=1;
-            }
-            if(right){
-              x+=1;
-            }
         }
                
     }
