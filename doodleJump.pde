@@ -3,13 +3,17 @@ PImage htpbutton;
 PImage playbutton;
 PImage playonbutton;
 
-String screen = "menu";
+String screen = "menu";//default is menu
 
 void show(){
      if (screen == "menu"){
        displayMenu();
      }
-}
+     if (screen == "game"){
+       startGame();
+     }
+}//show calls the right method for each display
+
  void setup(){
       size (320, 480);
         /*img = loadImage ("doodle jump title screen.png");
