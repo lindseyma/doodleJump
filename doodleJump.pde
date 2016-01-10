@@ -35,15 +35,16 @@ void show(){
         image (img, 0, 0);
           image (playbutton, 82, 190);
           
-            if (mouseX == 82 && mouseY == 190) 
-              {startgame();}
+            if (mousePressed && mouseX > 82 && mouseX < 193 && mouseY < 194 && mouseY > 232){
+                screen="game";
+            }//if play button
           
         println(mouseX + " : " + mouseY);
     }
     
-    void startgame(){
+    /*void startgame(){
       image (playonbutton, 82, 190);
-    }
+    }*/
   
   
   /*void setup(){
