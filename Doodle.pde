@@ -38,6 +38,15 @@ class Doodle{
             if(right){
               x+=20;
             }
+         //wrapping ayy
+         if(x>320){
+           float temp = x - 320;
+           x = temp;
+         }
+         if(x<0){
+           float temp = 0 - x;
+           x= 320 - temp;
+         }
         println(x + "," + y);
         
         /*////////////////////////////////////////////////////////////////////////Y
