@@ -13,8 +13,10 @@ class Doodle{
         
         
         void display(){
+        //////////////////////////////////////////////////////////////////X
         //println("test");
        // println(mouseX + " : " + mouseY);
+       //println(frameCount); ~20 framecounts = one jump?
         if (keyPressed){
            //println("hey");
            if(key=='a'){ 
@@ -36,8 +38,29 @@ class Doodle{
             if(right){
               x+=20;
             }
+         //wrapping ayy
+         if(x>320){
+           float temp = x - 320;
+           x = temp;
+         }
+         if(x<0){
+           float temp = 0 - x;
+           x= 320 - temp;
+         }
         println(x + "," + y);
+        
+        /*////////////////////////////////////////////////////////////////////////Y
+        float yVel;
+        float gravity = 0.000000000000000000000000000000000000000000001;
+        float currentFrame=frameRate;
+        yVel=0; // in later versions, start the jump when yvel is 0??
+        if(yVel==0){
+            float temp=yVel;
+            yVel= temp + gravity * (frameRate-currentFrame);
         }
+        float tempY = y;
+        y+=tempY + yVel * (frameRate-currentFrame);*/
                
     }
-    
+
+}

@@ -13,10 +13,22 @@ void show(){
        startGame();
      }
 }//show calls the right method for each display
+
 Doodle d= new Doodle(145, 450);
+
  void setup(){
       size (320, 480);
+<<<<<<< HEAD
       
+=======
+      frameRate(10);
+        /*img = loadImage ("doodle jump title screen.png");
+        playbutton = loadImage("play.png");
+        playonbutton = loadImage("play-on.png");*/
+      /*if (screen=="game"){
+        Doodle d= new Doodle(width/2-15, height - 30);
+      }*/
+>>>>>>> d867cdd7448e57e22a4453511127362cd6525435
     }          
         
 void draw(){
@@ -53,6 +65,7 @@ void draw(){
       d.display();
     }
        
+<<<<<<< HEAD
 
  
   /////////////These methods are commented but please don't delete them for now thanks!
@@ -72,3 +85,10 @@ void draw(){
       d.display();
       d.move();
 }*/
+=======
+    /*void startgame(){ 
+      //wasn't sure if this method was still necessary but i didn't want to delete it until you took at look at it
+      image (playonbutton, 82, 190);
+    }*/
+  
+>>>>>>> d867cdd7448e57e22a4453511127362cd6525435
