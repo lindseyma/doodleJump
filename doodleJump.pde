@@ -13,9 +13,12 @@ void show(){
        startGame();
      }
 }//show calls the right method for each display
+
 Doodle d= new Doodle(145, 450);
+
  void setup(){
       size (320, 480);
+      frameRate(10);
         /*img = loadImage ("doodle jump title screen.png");
         playbutton = loadImage("play.png");
         playonbutton = loadImage("play-on.png");*/
@@ -58,21 +61,3 @@ void draw(){
       image (playonbutton, 82, 190);
     }*/
   
- 
-  /////////////These methods are commented but please don't delete them for now thanks!
-  /*void setup(){
-      size(360,550);
-      background(248,240,234);
-      initialize();
-}
-
-void initialize(){
-      //Doodle d= new Doodle(160,520);
-      //d.display();
-}
-
-void draw(){
-      Doodle d= new Doodle(160,520);
-      d.display();
-      d.move();
-}*/
