@@ -16,12 +16,7 @@ void show(){
 Doodle d= new Doodle(145, 450);
  void setup(){
       size (320, 480);
-        /*img = loadImage ("doodle jump title screen.png");
-        playbutton = loadImage("play.png");
-        playonbutton = loadImage("play-on.png");*/
-      /*if (screen=="game"){
-        Doodle d= new Doodle(width/2-15, height - 30);
-      }*/
+      
     }          
         
 void draw(){
@@ -36,7 +31,12 @@ void draw(){
         background(img);
           image (playbutton, 82, 190);
           
+          if (mouseX > 82 && mouseX < 913 && mouseY > 194 && mouseY < 232){
+            image (playonbutton, 82, 190);
+          }
+          
             if (mousePressed && mouseX > 82 && mouseX < 193 && mouseY > 194 && mouseY < 232){
+  
                 screen="game";
             }//if play button
           
@@ -53,11 +53,7 @@ void draw(){
       d.display();
     }
        
-    /*void startgame(){ 
-      //wasn't sure if this method was still necessary but i didn't want to delete it until you took at look at it
-      image (playonbutton, 82, 190);
-    }*/
-  
+
  
   /////////////These methods are commented but please don't delete them for now thanks!
   /*void setup(){
