@@ -1,6 +1,7 @@
 class Doodle{
   
          PImage chara;
+         PImage charaRight;
         
          float x;
          float y;
@@ -20,9 +21,11 @@ class Doodle{
           
           chara = loadImage("doodle_left.png");
           chara.resize(50,50);
-          image (chara, x, y);
+          charaRight = loadImage("doodle_right.png");
+          charaRight.resize(50,50);
           
-   
+          image (chara, x, y);
+          image (charaRight, x, y);
           
           
         //////////////////////////////////////////////////////////////////X
@@ -46,9 +49,12 @@ class Doodle{
         println(left);
          if(left){
               x-=20;
+       
             }
             if(right){
               x+=20;
+             
+              
             }         
             
             
