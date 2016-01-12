@@ -1,8 +1,11 @@
 class Doodle{
-        
+         float gravity = 10;
          float x;
          float y;
          float velX;
+         float velY;
+         float time;
+         float newTime;
          
         Doodle(float x, float y){
             this.x=x;
@@ -49,8 +52,20 @@ class Doodle{
          }
         println(x + "," + y);
         
-        /*////////////////////////////////////////////////////////////////////////Y
-        float yVel;
+        ////////////////////////////////////////////////////////////////////////Y
+        //formulas !!!
+        //h = 1/2 gt^2
+        //v^2=2gh
+        //v=gt
+       /* while(velY>0){
+          if(y==450){ //keep in mind this y-coord is only for now to test the physics
+             velY=10;
+             time=millis();
+          }
+          y-=velY;
+        }*/
+        
+        /*float yVel;
         float gravity = 0.000000000000000000000000000000000000000000001;
         float currentFrame=frameRate;
         yVel=0; // in later versions, start the jump when yvel is 0??
@@ -64,3 +79,14 @@ class Doodle{
     }
 
 }
+
+
+/*void move(){
+  x+=dx;
+  y+=dy;
+}
+
+public void gravity(){
+  dy-=-0.2;
+}
+*/
