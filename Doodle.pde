@@ -1,18 +1,30 @@
 class Doodle{
+  
+         PImage chara;
         
          float x;
          float y;
-         float velX;
+         float velX = 5;
+      
+         
          
         Doodle(float x, float y){
             this.x=x;
             this.y=y;
         }
           
-        boolean left; boolean right;
+       boolean left; boolean right;
         
         
         void display(){
+          
+          chara = loadImage("doodle_left.png");
+          chara.resize(50,50);
+          image (chara, x, y);
+          
+   
+          
+          
         //////////////////////////////////////////////////////////////////X
         //println("test");
        // println(mouseX + " : " + mouseY);
@@ -30,14 +42,16 @@ class Doodle{
           left=false;
           right=false;
         }
-       rect(x, y, 30, 30);
+      
         println(left);
          if(left){
               x-=20;
             }
             if(right){
               x+=20;
-            }
+            }         
+            
+            
          //wrapping ayy
          if(x>320){
            float temp = x - 320;
@@ -62,5 +76,6 @@ class Doodle{
         y+=tempY + yVel * (frameRate-currentFrame);*/
                
     }
+    
 
 }
