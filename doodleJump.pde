@@ -27,10 +27,11 @@ void show(){
      }
 }//show calls the right method for each display
 
-Doodle d= new Doodle(145, 450);
+Doodle d= new Doodle(135, 430);
 
  void setup(){
       size (320, 480);
+<<<<<<< HEAD
         /*img = loadImage ("doodle jump title screen.png");
         playbutton = loadImage("play.png");
         playonbutton = loadImage("play-on.png");*/
@@ -49,6 +50,10 @@ Doodle d= new Doodle(145, 450);
      }//for i/*
   }
               
+=======
+
+    }          
+>>>>>>> 11e5e1fdfc9573dceb3f126e39922eb86a90db64
         
 void draw(){
     show();
@@ -82,6 +87,7 @@ void draw(){
       //moved line below to the setup
       //Doodle d= new Doodle(width/2-15, height - 30);
       d.display();
+<<<<<<< HEAD
       boolean runOnce = true;
       if (runOnce){
         int initPlat = int(random(3,7));
@@ -96,3 +102,32 @@ void draw(){
       }
         
     }
+=======
+    }
+       
+
+ 
+  /////////////These methods are commented but please don't delete them for now thanks!
+  /*void setup(){
+      size(360,550);
+      background(248,240,234);
+      initialize();
+}
+
+void initialize(){
+      //Doodle d= new Doodle(160,520);
+      //d.display();
+}
+
+void draw(){
+      Doodle d= new Doodle(160,520);
+      d.display();
+      d.move();
+}*/
+
+    /*void startgame(){ 
+      //wasn't sure if this method was still necessary but i didn't want to delete it until you took at look at it
+      image (playonbutton, 82, 190);
+    }*/
+  
+>>>>>>> 11e5e1fdfc9573dceb3f126e39922eb86a90db64

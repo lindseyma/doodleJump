@@ -1,4 +1,5 @@
 class Doodle{
+<<<<<<< HEAD
          float gravity = 10;
          float x;
          float y;
@@ -6,16 +7,41 @@ class Doodle{
          float velY;
          float time;
          float newTime;
+=======
+  
+         PImage chara;
+         PImage charaRight;
+        
+         float x;
+         float y;
+         float velX = 5;
+         
+>>>>>>> 11e5e1fdfc9573dceb3f126e39922eb86a90db64
          
         Doodle(float x, float y){
             this.x=x;
             this.y=y;
         }
           
-        boolean left; boolean right;
+       boolean left; boolean right;
+       boolean flip;
         
         
         void display(){
+          
+          chara = loadImage("doodle_left.png");
+          chara.resize(50,50);
+          charaRight = loadImage("doodle_right.png");
+          charaRight.resize(50,50);
+          
+          
+          if (flip){
+            image (charaRight, x, y);
+          }else{
+            image (chara, x, y);
+          }
+         
+          
         //////////////////////////////////////////////////////////////////X
         //println("test");
        // println(mouseX + " : " + mouseY);
@@ -24,23 +50,32 @@ class Doodle{
            //println("hey");
            if(key=='a'){ 
              left = true;
+             flip = false;
+          
            }
            if(key=='d'){
              right = true;
+             flip = true;
+         
            }
         }
         if(keyPressed==false){
           left=false;
           right=false;
         }
-       rect(x, y, 30, 30);
+      
         println(left);
          if(left){
               x-=20;
+       
             }
             if(right){
               x+=20;
-            }
+             
+              
+            }         
+            
+            
          //wrapping ayy
          if(x>320){
            float temp = x - 320;
@@ -77,6 +112,7 @@ class Doodle{
         y+=tempY + yVel * (frameRate-currentFrame);*/
                
     }
+    
 
 }
 
