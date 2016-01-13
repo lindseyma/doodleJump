@@ -1,13 +1,9 @@
 class Doodle{
-<<<<<<< HEAD
          float gravity = 10;
-         float x;
-         float y;
-         float velX;
+         
          float velY;
          float time;
          float newTime;
-=======
   
          PImage chara;
          PImage charaRight;
@@ -15,8 +11,6 @@ class Doodle{
          float x;
          float y;
          float velX = 5;
-         
->>>>>>> 11e5e1fdfc9573dceb3f126e39922eb86a90db64
          
         Doodle(float x, float y){
             this.x=x;
