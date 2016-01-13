@@ -6,7 +6,6 @@ class Doodle{
          float x;
          float y;
          float velX = 5;
-      
          
          
         Doodle(float x, float y){
@@ -15,6 +14,7 @@ class Doodle{
         }
           
        boolean left; boolean right;
+       boolean flip;
         
         
         void display(){
@@ -24,9 +24,13 @@ class Doodle{
           charaRight = loadImage("doodle_right.png");
           charaRight.resize(50,50);
           
-          image (chara, x, y);
-          image (charaRight, x, y);
           
+          if (flip){
+            image (charaRight, x, y);
+          }else{
+            image (chara, x, y);
+          }
+         
           
         //////////////////////////////////////////////////////////////////X
         //println("test");
@@ -36,9 +40,13 @@ class Doodle{
            //println("hey");
            if(key=='a'){ 
              left = true;
+             flip = false;
+          
            }
            if(key=='d'){
              right = true;
+             flip = true;
+         
            }
         }
         if(keyPressed==false){
