@@ -27,7 +27,7 @@ void show(){
      }
 }//show calls the right method for each display
 
-Doodle d= new Doodle(135, 430);
+Doodle d= new Doodle(135, 0);
 
  void setup(){
       size (320, 480);
@@ -39,7 +39,8 @@ Doodle d= new Doodle(135, 430);
       }*/
       //this is not the right place ay
      // if (screen=="game"){
-    int initPlat = int(random(3,7));
+       
+   int initPlat = int(random(3,7));
    int sectionSize = height/initPlat;
       for(int i=0; i<initPlat; i++){
         println(i + "," + initPlat);
@@ -47,6 +48,7 @@ Doodle d= new Doodle(135, 430);
         float platY = random(sectionSize*i, sectionSize*(i+1));
         line(platX, platY, platX+35, platY);
      }//for i/*
+     
   }
         
 void draw(){
@@ -81,6 +83,7 @@ void draw(){
       //moved line below to the setup
       //Doodle d= new Doodle(width/2-15, height - 30);
       d.display();
+      
       boolean runOnce = true;
       if (runOnce){
         int initPlat = int(random(3,7));
@@ -92,7 +95,9 @@ void draw(){
         line(platX, platY, platX+35, platY);
      }//for i
      runOnce=false;
+     
       }
+      
         
     }
     
