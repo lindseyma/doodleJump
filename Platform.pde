@@ -9,6 +9,7 @@ class Platform{
    }
    
    //arraylist of platform shows what platforms are currently on screen
+   //if arraylist is empty, do this!
    ArrayList<Platform> platforms = new ArrayList<Platform>();
    int initPlat = int(random(3,7));
    int sectionSize = height/initPlat;
@@ -18,6 +19,7 @@ class Platform{
         float platX = random(0, width);
         float platY = random(sectionSize*i, sectionSize*(i+1));
         line(platX, platY, platX+10, platY);
+        //platforms.add(
      }//for i
    }
   

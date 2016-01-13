@@ -107,6 +107,8 @@ class Doodle{
                
     }
     
+    //if velocity is negative and doodle coordinate = platform coord, jump.
+    
 
 }
 
