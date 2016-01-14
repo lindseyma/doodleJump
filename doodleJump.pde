@@ -2,7 +2,6 @@ PImage img;
 PImage htpbutton;
 PImage playbutton;
 PImage playonbutton;
-
 String screen = "menu";//default is menu
 
 Doodle d= new Doodle(135, 430);
@@ -51,21 +50,13 @@ void show(){
       img = loadImage ("background.png");
       img.resize(320,480);
       background(img);
-      //moved line below to the setup
-      //Doodle d= new Doodle(width/2-15, height - 30);
       d.display();
-      if (runOnce){
-        int initPlat = int(random(3,7));
-   int sectionSize = height/initPlat;
-      for(int i=0; i<initPlat; i++){
-        println(i + "," + initPlat);
-        float platX = random(0, width);
-        float platY = random(sectionSize*i, sectionSize*(i+1));
-        line(platX, platY, platX+35, platY);
-     }//for i
-     runOnce=false;
+      ArrayList<Platform> platforms = new ArrayList<Platform>();
+      for(int i=0; i<platforms.size(); i++){
+        (platforms.get(i)).display();
       }
-        
     }
+    
+   
     
   
