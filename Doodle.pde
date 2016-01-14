@@ -1,5 +1,6 @@
-class Doodle{
-         float gravity = 10;
+class Doodle {
+         float gravity = .8;
+         float speed = 0;
          
          float velY;
          float time;
@@ -80,6 +81,15 @@ class Doodle{
            x= 320 - temp;
          }
         println(x + "," + y);
+        
+        
+        //gravity part
+        
+        y = y + speed;
+        speed = speed + gravity;
+        
+        //make chara stop at bottom, prob need to adjust for platforms later
+        
         
         ////////////////////////////////////////////////////////////////////////Y
         //formulas !!!
