@@ -89,46 +89,6 @@ class Doodle {
         speed = speed + gravity;
         
         //make chara stop at bottom, prob need to adjust for platforms later
-        
-        
-        ////////////////////////////////////////////////////////////////////////Y
-        //formulas !!!
-        //h = 1/2 gt^2
-        //v^2=2gh
-        //v=gt
-       /* while(velY>0){
-          if(y==450){ //keep in mind this y-coord is only for now to test the physics
-             velY=10;
-             time=millis();
-          }
-          y-=velY;
-        }*/
-        
-        /*float yVel;
-        float gravity = 0.000000000000000000000000000000000000000000001;
-        float currentFrame=frameRate;
-        yVel=0; // in later versions, start the jump when yvel is 0??
-        if(yVel==0){
-            float temp=yVel;
-            yVel= temp + gravity * (frameRate-currentFrame);
+      
         }
-        float tempY = y;
-        y+=tempY + yVel * (frameRate-currentFrame);*/
-               
-    }
-    
-    //if velocity is negative and doodle coordinate = platform coord, jump.
-    
-
 }
-
-
-/*void move(){
-  x+=dx;
-  y+=dy;
-}
-
-public void gravity(){
-  dy-=-0.2;
-}
-*/
