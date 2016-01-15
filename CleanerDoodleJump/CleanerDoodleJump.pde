@@ -53,9 +53,9 @@ void gameScreen() {
   bg.resize(320, 480);
   background(bg);
   
+  chara.display();
   chara.gravity();
   chara.movement();
-  chara.display();
   
 }
 void gameOverScreen() {
@@ -83,6 +83,10 @@ void keyPressed(){
     chara.right = 1;
     chara.flip = true;
   }
+  
+  if (key == 'w'){
+    chara.up = -1;
+  }
 }
 
 void keyReleased(){
@@ -92,6 +96,10 @@ void keyReleased(){
   
   if (key == 'd'){
     chara.right = 0;
+  }
+  
+  if (key == 'w'){
+    chara.up = 0;
   }
 }
 

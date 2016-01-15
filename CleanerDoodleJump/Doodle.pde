@@ -36,19 +36,21 @@ class Doodle{
  }
  
  //movement
- float xspeed = 30.0;
+ float xspeed = 10.0;
  float left;
  float right; 
+ float up;
  float smoothen = .001;
  
  void movement(){
    x += (right - left) * xspeed;   
    x -= (right - left) * (xspeed * smoothen);
+   y += up * 30;
  }
  
  //gravity
  float yspeed = 0;
- float gravity = 1;
+ float gravity = .3;
  float airfriction = .001;
  
  
