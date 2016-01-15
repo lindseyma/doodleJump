@@ -36,7 +36,7 @@ class Doodle{
  }
  
  //movement
- float xspeed = 10.0;
+ float xspeed = 30.0;
  float left;
  float right; 
  float smoothen = .001;
