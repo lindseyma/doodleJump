@@ -1,5 +1,5 @@
 class Doodle {
-         float gravity = .8;
+         float gravity = 0.8;
          float speed = 0;
          
          float velY;
@@ -59,7 +59,7 @@ class Doodle {
           right=false;
         }
       
-        println(left);
+        //println(left);
          if(left){
               x-=20;
        
@@ -80,7 +80,7 @@ class Doodle {
            float temp = 0 - x;
            x= 320 - temp;
          }
-        println(x + "," + y);
+        //println(x + "," + y);
         
         
         //gravity part
