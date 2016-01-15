@@ -75,18 +75,7 @@ void draw(){
        }
    }
    
-   //accessor methods
-   /*float getX(){
-     return platX;
-   }
    
-   float getY(){
-     return platY;
-   }
-   */
-   
-     
-
         
 
  
