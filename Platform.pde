@@ -8,6 +8,7 @@ class Platform{
       this.platY=platY;
    }
    
+   //accessor methods//
    float getX(){
      return platX;
    }
@@ -15,5 +16,14 @@ class Platform{
    float getY(){
      return platY;
    }
+   ////
    
+   //change methods//
+   void changeX(float newX){
+     platX=newX;
+   }
+   
+   void changeY(float newY){
+     platY=newY;
+   }
 }

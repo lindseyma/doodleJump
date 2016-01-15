@@ -54,6 +54,9 @@ void draw(){
       background(img);
       d.display();
       display();
+      if(d.getY() <= height/2){
+        platScroll();
+      }
     }
     
    float platfX;
@@ -75,7 +78,13 @@ void draw(){
        }
    }
    
-   
-        
-
- 
+   void platScroll(){
+     for(int i=0; i<platforms.size(); i++){
+       platforms.get(i).changeY(platforms.get(i).getY()+10);
+       if (platforms.get(i).getY()>height){
+         platforms.remove(i);
+         i--;
+       }
+     }
+   }
+  

@@ -91,4 +91,10 @@ class Doodle {
         //make chara stop at bottom, prob need to adjust for platforms later
       
         }
+        
+        //accessor
+        
+        float getY(){
+          return y;
+        }
 }
