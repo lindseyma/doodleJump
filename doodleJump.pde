@@ -95,8 +95,8 @@ void draw(){
       replacePlat = true;
     }//if to assign replacePlat
     //if (replacePlat){*/
-    platforms.add(new Platform((float)(random(0, width)), newPY));
+    platforms.add(new Platform((float)(random(0, width)), -1));
     }
     
   //float newPX = random(0, width);
-  float newPY = random(0, (height/2));
+  //float newPY = random(0, (height/2));
