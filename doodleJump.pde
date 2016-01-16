@@ -84,7 +84,19 @@ void draw(){
        if (platforms.get(i).getY()>height){
          platforms.remove(i);
          i--;
+         newPlats();
        }
      }
    }
   
+  void newPlats(){
+    /*boolean replacePlat;
+    if(((int)random(1,2)) % 2 == 0){
+      replacePlat = true;
+    }//if to assign replacePlat
+    //if (replacePlat){*/
+    platforms.add(new Platform((float)(random(0, width)), newPY));
+    }
+    
+  //float newPX = random(0, width);
+  float newPY = random(0, (height/2));
