@@ -59,9 +59,10 @@ void gameScreen() {
   chara.movement();
   
    display();
-      if(chara.getY() <= height/2){
-        platScroll();
-      }
+   if(chara.getY() <= height/2){
+     platScroll();
+   }
+   intersect();
 }
 void gameOverScreen() {
   // codes for game over screen
@@ -148,11 +149,22 @@ float platfX;
       replacePlat = true;
     }//if to assign replacePlat
     //if (replacePlat){*/
-    platforms.add(new Platform((float)(random(0, width)), -1));
+    platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
     
   //float newPX = random(0, width);
   //float newPY = random(0, (height/2));
+
+  void intersect(){
+    if(chara.getYVel()>0){
+      for(int i=0; i<platforms.size(); i++){
+        if(platforms.get(i).getX() == chara.getX() &&
+           platforms.get(i).getY() == chara.getY()){
+           chara.setY(0);
+           }
+      }
+  }
+  }
 
 //determine which screen gets set
 void startGame(){

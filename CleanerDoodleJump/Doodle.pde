@@ -49,18 +49,30 @@ class Doodle{
  }
  
  //gravity
- float yspeed = 0;
+ float yVel = 0;
  float gravity = .3;
  float airfriction = .001;
  
  
  void gravity(){
-   y += yspeed;
-   yspeed += gravity;
-   yspeed -= (yspeed * airfriction);
+   y += yVel;
+   yVel += gravity;
+   yVel -= (yVel * airfriction);
  }
  
  float getY(){
           return y;
         }
+ 
+ float getX(){
+   return x;
+ }
+ 
+ float getYVel(){
+   return yVel;
+ }
+ 
+ void setY(float newY){
+   y = newY;
+ }
 }
