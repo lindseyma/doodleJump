@@ -60,5 +60,7 @@ class Doodle{
    yspeed -= (yspeed * airfriction);
  }
  
- 
+ float getY(){
+          return y;
+        }
 }
