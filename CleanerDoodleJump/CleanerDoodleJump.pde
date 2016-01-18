@@ -23,7 +23,8 @@ void draw(){
   } else if (gameScreen == 2) {
     gameOverScreen();
   }
-  println(chara.getY());
+  println("charCoord" + chara.getX() + "," + chara.getY());
+  println(platforms.get(0).getX() + "," + platforms.get(0).getY());
 }
 
 //screen contents
@@ -111,10 +112,10 @@ float platfX;
    float platfY;
     
    void initPlatSetup(){
-     platforms.add(new Platform(width/2, 430));
+     platforms.add(new Platform(135, 430));
      int initPlat = int(random(3,7));
      int sectionSize = height/initPlat;
-     for(int i=0; i<initPlat; i++){
+     for(int i=1; i<initPlat+1; i++){
         platfX = random(0, width);
         platfY = random(sectionSize*i, sectionSize*(i+1));
         platforms.add(new Platform(platfX, platfY));
@@ -151,18 +152,16 @@ float platfX;
   //float newPY = random(0, (height/2));
 
   void intersect(){
-    if(chara.getYVel()>0){
-      if (chara.getX()==100){
-        chara.setY(0);
-      }
-      /*for(int i=0; i<platforms.size(); i++){
-        if(platforms.get(i).getX() == chara.getX() &&
+      for(int i=0; i<platforms.size(); i++){
+        if(platforms.get(i).getX() <= chara.getX() &&
+           platforms.get(i).getX() + 35 >= chara.getX() &&
            platforms.get(i).getY() == chara.getY()){
-           chara.setY(0);
-           }
-      }*/
-  }
-  }
+           if(chara.getY() > 0) { //this checks that the player is falling down
+             chara.setY(-10);
+           }//if
+        }//if
+     }//for
+  }//intersect
 
 //determine which screen gets set
 void startGame(){
