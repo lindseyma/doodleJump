@@ -9,8 +9,7 @@ Doodle chara;
 //setup
 void setup(){
   size(320, 480);
-  chara = new Doodle(135, 30);
-  platforms = new Platform(
+  chara = new Doodle(135, 430);
   frameRate(30);
   initPlatSetup();
 }
@@ -59,15 +58,12 @@ void gameScreen() {
   chara.gravity();
   chara.movement();
   
-<<<<<<< HEAD
-  
-=======
+
    display();
    if(chara.getY() <= height/2){
      platScroll();
    }
    intersect();
->>>>>>> 73a152c53b1b36c771b8c81a03eb081c338f5e43
 }
 void gameOverScreen() {
   // codes for game over screen
@@ -118,23 +114,39 @@ void keyReleased(){
 
 ArrayList<Platform> platforms= new ArrayList<Platform>();
 
+PImage green;
+
 float platfX;
-   float platfY;
+float platfY;
     
    void initPlatSetup(){
+     
+     green = loadImage("green_platform.png");
+     green.resize(45,11);
+     
+     
      int initPlat = int(random(3,7));
      int sectionSize = height/initPlat;
+     
      for(int i=0; i<initPlat; i++){
         platfX = random(0, width);
         platfY = random(sectionSize*i, sectionSize*(i+1));
         platforms.add(new Platform(platfX, platfY));
      }//for i
    }
+  
    
    void display(){
+     
+      for(int i=0; i<platforms.size(); i++){
+         image (green, platforms.get(i).getX(), platforms.get(i).getY());
+      }
+
+/*
      for(int i=0; i<platforms.size(); i++){
          line(platforms.get(i).getX(), platforms.get(i).getY(), (platforms.get(i).getX())+35, platforms.get(i).getY());   
        }
+       */
    }
    
    void platScroll(){
