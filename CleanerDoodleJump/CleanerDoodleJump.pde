@@ -158,7 +158,7 @@ float platfX;
            platforms.get(i).getX() + 35 >= chara.getX() &&
            platforms.get(i).getY() == chara.getY()){
            if(chara.getY() > 0) { //this checks that the player is falling down
-             chara.setY(-10);
+             chara.setY(-8);
            }//if
         }//if
      }//for
