@@ -9,9 +9,7 @@ Doodle chara;
 //setup
 void setup(){
   size(320, 480);
-  chara = new Doodle(135, 30);
-  platforms = new Platform(
-  frameRate(30);
+  chara = new Doodle(135, 430);
   initPlatSetup();
 }
 
@@ -113,6 +111,7 @@ float platfX;
    float platfY;
     
    void initPlatSetup(){
+     platforms.add(new Platform(width/2, 430));
      int initPlat = int(random(3,7));
      int sectionSize = height/initPlat;
      for(int i=0; i<initPlat; i++){
