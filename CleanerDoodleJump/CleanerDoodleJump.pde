@@ -164,20 +164,16 @@ float platfX;
   //float newPX = random(0, width);
   //float newPY = random(0, (height/2));
 
-  void intersect(){
-    //println(chara.getYVel());
+   void intersect(){
       for(int i=0; i<platforms.size(); i++){
-        float cx = chara.getX()+15;
-        float cy = chara.getY()+30;
-        float platLeftX = platforms.get(i).getX();
-        float platY = platforms.get(i).getY();
-        float platRightX = platforms.get(i).getX()+35;
-        if((cx >= platLeftX && cx <= platRightX) &&
-          (cy == platY) &&
+        if((platforms.get(i).getX() >= chara.getX() &&
+           platforms.get(i).getX() + 35 >= chara.getX()) &&
+           (platforms.get(i).getY() >= chara.getY() &&
+           platforms.get(i).getY() - 3 <= chara.getY()) &&
            chara.getYVel() > 0) { //this checks that the player is falling down
              chara.setY(-8);
              println("charCoord" + chara.getX() + "," + chara.getY());
-             //println(platforms.get(i).getX() + "," + platforms.get(i).getY());
+             println(platforms.get(i).getX() + "," + platforms.get(i).getY());
              //println(chara.getYVel());
         }//if
      }//for
