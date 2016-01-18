@@ -65,6 +65,7 @@ void gameScreen() {
      platScroll();
    }
    intersect();
+   cleanUp();
    
 }
 void gameOverScreen() {
@@ -140,6 +141,15 @@ float platfX;
      }
    }
   
+  void cleanUp(){
+    for(int i=0; i<platforms.size(); i++){
+      if (platforms.get(i).getY()>height){
+        platforms.remove(i);
+        i--;
+      }
+    }
+  }
+    
   void newPlats(){
     /*boolean replacePlat;
     if(((int)random(1,2)) % 2 == 0){
@@ -153,11 +163,12 @@ float platfX;
   //float newPY = random(0, (height/2));
 
   void intersect(){
+    println("called");
       for(int i=0; i<platforms.size(); i++){
         if((platforms.get(i).getX() >= chara.getX() &&
            platforms.get(i).getX() + 35 >= chara.getX()) &&
            (platforms.get(i).getY() >= chara.getY() &&
-           platforms.get(i).getY() - 3 <= chara.getY()) &&
+           platforms.get(i).getY() - 3 <= chara.getY() + 3) &&
            chara.getYVel() > 0) { //this checks that the player is falling down
              chara.setY(-8);
              println("charCoord" + chara.getX() + "," + chara.getY());
