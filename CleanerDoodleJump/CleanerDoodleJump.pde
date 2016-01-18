@@ -16,6 +16,8 @@ void setup(){
 //draw
 
 void draw(){
+  println("charCoord" + chara.getX() + "," + chara.getY());
+  println(platforms.get(0).getX() + "," + platforms.get(0).getY());
    if (gameScreen == 0) {
     initScreen();
   } else if (gameScreen == 1) {
@@ -117,7 +119,7 @@ float platfX;
      platforms.add(new Platform(135, 430));
      int initPlat = int(random(3,7));
      int sectionSize = height/initPlat;
-     for(int i=1; i<initPlat+1; i++){
+     for(int i=1; i<initPlat; i++){
         platfX = random(0, width);
         platfY = random(sectionSize*i, sectionSize*(i+1));
         platforms.add(new Platform(platfX, platfY));
@@ -163,16 +165,19 @@ float platfX;
   //float newPY = random(0, (height/2));
 
   void intersect(){
-    println("called");
+    //println(chara.getYVel());
       for(int i=0; i<platforms.size(); i++){
-        if((platforms.get(i).getX() >= chara.getX() &&
-           platforms.get(i).getX() + 35 >= chara.getX()) &&
-           (platforms.get(i).getY() >= chara.getY() &&
-           platforms.get(i).getY() - 3 <= chara.getY() + 3) &&
+        float cx = chara.getX()+15;
+        float cy = chara.getY()+30;
+        float platLeftX = platforms.get(i).getX();
+        float platY = platforms.get(i).getY();
+        float platRightX = platforms.get(i).getX()+35;
+        if((cx >= platLeftX && cx <= platRightX) &&
+          (cy == platY) &&
            chara.getYVel() > 0) { //this checks that the player is falling down
              chara.setY(-8);
              println("charCoord" + chara.getX() + "," + chara.getY());
-             println(platforms.get(i).getX() + "," + platforms.get(i).getY());
+             //println(platforms.get(i).getX() + "," + platforms.get(i).getY());
              //println(chara.getYVel());
         }//if
      }//for
