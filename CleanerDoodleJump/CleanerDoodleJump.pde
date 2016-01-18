@@ -23,9 +23,9 @@ void draw(){
   } else if (gameScreen == 2) {
     gameOverScreen();
   }
-  println("charCoord" + chara.getX() + "," + chara.getY());
-  println(platforms.get(0).getX() + "," + platforms.get(0).getY());
-  println(chara.getYVel());
+  //println("charCoord" + chara.getX() + "," + chara.getY());
+  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
+  //println(chara.getYVel());
 }
 
 //screen contents
@@ -154,13 +154,15 @@ float platfX;
 
   void intersect(){
       for(int i=0; i<platforms.size(); i++){
-        if(platforms.get(i).getX() <= chara.getX() &&
-           platforms.get(i).getX() + 35 >= chara.getX() &&
-           (platforms.get(i).getY() <= chara.getY() ||
-           platforms.get(i).getY()+0.3 >=chara.getY()) &&
+        if((platforms.get(i).getX() >= chara.getX() &&
+           platforms.get(i).getX() + 35 >= chara.getX()) &&
+           (platforms.get(i).getY() >= chara.getY() &&
+           platforms.get(i).getY() - 3 <= chara.getY()) &&
            chara.getYVel() > 0) { //this checks that the player is falling down
              chara.setY(-8);
-             println("hey it should work right now!");
+             println("charCoord" + chara.getX() + "," + chara.getY());
+             println(platforms.get(i).getX() + "," + platforms.get(i).getY());
+             //println(chara.getYVel());
         }//if
      }//for
   }//intersect
