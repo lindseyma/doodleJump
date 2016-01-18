@@ -10,10 +10,7 @@ Doodle chara;
 void setup(){
   size(320, 480);
   chara = new Doodle(135, 430);
-<<<<<<< HEAD
   frameRate(30);
-=======
->>>>>>> 304cf37a9607df58fa5c5ec8f21e525f10dc3248
   initPlatSetup();
 }
 
@@ -63,23 +60,18 @@ void gameScreen() {
   background(bg);
   
   chara.display();
+  chara.initialJump();
   //chara.gravity();
   chara.movement();
+ 
   
-<<<<<<< HEAD
-
-=======
->>>>>>> 304cf37a9607df58fa5c5ec8f21e525f10dc3248
    display();
    if(chara.getY() <= height/2){
      platScroll();
    }
    intersect();
-<<<<<<< HEAD
-=======
+
    cleanUp();
-   
->>>>>>> 304cf37a9607df58fa5c5ec8f21e525f10dc3248
 }
 void gameOverScreen() {
   // codes for game over screen
@@ -129,7 +121,6 @@ float platfX;
 float platfY;
     
    void initPlatSetup(){
-<<<<<<< HEAD
      
      green = loadImage("green_platform.png");
      green.resize(45,11);
@@ -138,13 +129,7 @@ float platfY;
      int initPlat = int(random(3,7));
      int sectionSize = height/initPlat;
      
-     for(int i=0; i<initPlat; i++){
-=======
-     platforms.add(new Platform(135, 430));
-     int initPlat = int(random(3,7));
-     int sectionSize = height/initPlat;
      for(int i=1; i<initPlat; i++){
->>>>>>> 304cf37a9607df58fa5c5ec8f21e525f10dc3248
         platfX = random(0, width);
         platfY = random(sectionSize*i, sectionSize*(i+1));
         platforms.add(new Platform(platfX, platfY));

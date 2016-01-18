@@ -53,6 +53,13 @@ class Doodle{
    yVel = max(yVel, -maxY);
  }
  
+ //doodle jumps up as game starts
+ void initialJump(){
+   y -= 10;
+   yVel += gravity;
+   
+ }
+ 
  //gravity
  float yVel;
  float maxY = 10; //at this point, the player would go back down
