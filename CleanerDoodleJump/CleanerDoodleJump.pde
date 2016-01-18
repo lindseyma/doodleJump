@@ -10,6 +10,7 @@ Doodle chara;
 void setup(){
   size(320, 480);
   chara = new Doodle(135, 30);
+  platforms = new Platform(
   frameRate(30);
 }
 
@@ -56,6 +57,7 @@ void gameScreen() {
   chara.display();
   chara.gravity();
   chara.movement();
+  
   
 }
 void gameOverScreen() {
