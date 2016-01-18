@@ -1,4 +1,5 @@
 class Doodle{
+  
   float x;
   float y;
   
@@ -46,6 +47,7 @@ class Doodle{
    x += (right - left) * xspeed;   
    x -= (right - left) * (xspeed * smoothen);
    //y += up * 30;
+   y+=yVel;
    yVel += gravity;
    yVel = min(yVel, maxY);
    yVel = max(yVel, -maxY);
@@ -64,6 +66,8 @@ class Doodle{
    yVel -= (yVel * airfriction);
  }*/
  
+ 
+ //accessor and set methods ayy//////////////////
  float getY(){
           return y;
         }

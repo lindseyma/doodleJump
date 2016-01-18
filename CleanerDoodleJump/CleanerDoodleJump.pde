@@ -25,6 +25,7 @@ void draw(){
   }
   println("charCoord" + chara.getX() + "," + chara.getY());
   println(platforms.get(0).getX() + "," + platforms.get(0).getY());
+  println(chara.getYVel());
 }
 
 //screen contents
