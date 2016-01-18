@@ -39,26 +39,30 @@ class Doodle{
  float xspeed = 10.0;
  float left;
  float right; 
- float up;
+ //float up;
  float smoothen = .001;
  
  void movement(){
    x += (right - left) * xspeed;   
    x -= (right - left) * (xspeed * smoothen);
-   y += up * 30;
+   //y += up * 30;
+   yVel += gravity;
+   yVel = min(yVel, maxY);
+   yVel = max(yVel, -maxY);
  }
  
  //gravity
  float yVel = 0;
+ float maxY = 10; //at this point, the player would go back down
  float gravity = .3;
  float airfriction = .001;
  
  
- void gravity(){
+ /*void gravity(){
    y += yVel;
    yVel += gravity;
    yVel -= (yVel * airfriction);
- }
+ }*/
  
  float getY(){
           return y;
@@ -73,6 +77,6 @@ class Doodle{
  }
  
  void setY(float newY){
-   y = newY;
+   yVel = newY;
  }
 }

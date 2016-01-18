@@ -24,6 +24,7 @@ void draw(){
   } else if (gameScreen == 2) {
     gameOverScreen();
   }
+  println(chara.getY());
 }
 
 //screen contents
@@ -55,7 +56,7 @@ void gameScreen() {
   background(bg);
   
   chara.display();
-  chara.gravity();
+  //chara.gravity();
   chara.movement();
   
    display();
@@ -89,10 +90,6 @@ void keyPressed(){
     chara.right = 1;
     chara.flip = true;
   }
-  
-  if (key == 'w'){
-    chara.up = -1;
-  }
 }
 
 void keyReleased(){
@@ -104,9 +101,6 @@ void keyReleased(){
     chara.right = 0;
   }
   
-  if (key == 'w'){
-    chara.up = 0;
-  }
 }
 
 //platform stuff
@@ -157,12 +151,15 @@ float platfX;
 
   void intersect(){
     if(chara.getYVel()>0){
-      for(int i=0; i<platforms.size(); i++){
+      if (chara.getX()==100){
+        chara.setY(0);
+      }
+      /*for(int i=0; i<platforms.size(); i++){
         if(platforms.get(i).getX() == chara.getX() &&
            platforms.get(i).getY() == chara.getY()){
            chara.setY(0);
            }
-      }
+      }*/
   }
   }
 
