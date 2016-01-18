@@ -9,7 +9,7 @@ Doodle chara;
 //setup
 void setup(){
   size(320, 480);
-  chara = new Doodle(135, 430);
+  chara = new Doodle(135, 330);
   frameRate(30);
   initPlatSetup();
 }
@@ -58,23 +58,40 @@ void gameScreen() {
   bg = loadImage ("background.png");
   bg.resize(320, 480);
   background(bg);
-  
-  chara.display();
-  chara.initialJump();
-  //chara.gravity();
-  chara.movement();
  
   
    display();
    if(chara.getY() <= height/2){
      platScroll();
    }
+   
+  chara.display();
+  //chara.gravity();
+  chara.movement();
+   
    intersect();
 
    cleanUp();
+   
+   if (chara.getY() < 480){
+     gameScreen = 2;
+   }
 }
+
+PImage gameover;
+
 void gameOverScreen() {
   // codes for game over screen
+  
+  bg = loadImage ("background.png");
+  bg.resize(320, 480);
+  background(bg);
+  
+  gameover = loadImage("gameover.png");
+  image(gameover, 0, 30);
+ 
+  
+  
 }
 
 //inputs
