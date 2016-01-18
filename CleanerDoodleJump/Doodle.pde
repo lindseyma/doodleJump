@@ -52,10 +52,10 @@ class Doodle{
  }
  
  //gravity
- float yVel = 0;
+ float yVel;
  float maxY = 10; //at this point, the player would go back down
  float gravity = .3;
- float airfriction = .001;
+ //float airfriction = .001;
  
  
  /*void gravity(){
