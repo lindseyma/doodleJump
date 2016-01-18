@@ -12,6 +12,7 @@ void setup(){
   chara = new Doodle(135, 30);
   platforms = new Platform(
   frameRate(30);
+  initPlatSetup();
 }
 
 //draw
@@ -58,7 +59,15 @@ void gameScreen() {
   chara.gravity();
   chara.movement();
   
+<<<<<<< HEAD
   
+=======
+   display();
+   if(chara.getY() <= height/2){
+     platScroll();
+   }
+   intersect();
+>>>>>>> 73a152c53b1b36c771b8c81a03eb081c338f5e43
 }
 void gameOverScreen() {
   // codes for game over screen
@@ -105,6 +114,62 @@ void keyReleased(){
   }
 }
 
+//platform stuff
+
+ArrayList<Platform> platforms= new ArrayList<Platform>();
+
+float platfX;
+   float platfY;
+    
+   void initPlatSetup(){
+     int initPlat = int(random(3,7));
+     int sectionSize = height/initPlat;
+     for(int i=0; i<initPlat; i++){
+        platfX = random(0, width);
+        platfY = random(sectionSize*i, sectionSize*(i+1));
+        platforms.add(new Platform(platfX, platfY));
+     }//for i
+   }
+   
+   void display(){
+     for(int i=0; i<platforms.size(); i++){
+         line(platforms.get(i).getX(), platforms.get(i).getY(), (platforms.get(i).getX())+35, platforms.get(i).getY());   
+       }
+   }
+   
+   void platScroll(){
+     for(int i=0; i<platforms.size(); i++){
+       platforms.get(i).changeY(platforms.get(i).getY()+10);
+       if (platforms.get(i).getY()>height){
+         platforms.remove(i);
+         i--;
+         newPlats();
+       }
+     }
+   }
+  
+  void newPlats(){
+    /*boolean replacePlat;
+    if(((int)random(1,2)) % 2 == 0){
+      replacePlat = true;
+    }//if to assign replacePlat
+    //if (replacePlat){*/
+    platforms.add(new Platform((float)(random(0, width - 35)), -1));
+    }
+    
+  //float newPX = random(0, width);
+  //float newPY = random(0, (height/2));
+
+  void intersect(){
+    if(chara.getYVel()>0){
+      for(int i=0; i<platforms.size(); i++){
+        if(platforms.get(i).getX() == chara.getX() &&
+           platforms.get(i).getY() == chara.getY()){
+           chara.setY(0);
+           }
+      }
+  }
+  }
 
 //determine which screen gets set
 void startGame(){
