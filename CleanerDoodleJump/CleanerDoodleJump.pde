@@ -61,19 +61,21 @@ void gameScreen() {
  
   
    display();
-   if(chara.getY() <= height/2){
+   
+   
+   if(chara.y <= height/2){
      platScroll();
    }
+  
    
   chara.display();
   //chara.gravity();
   chara.movement();
-   
-   intersect();
+  
 
    cleanUp();
    
-   if (chara.getY() < 480){
+   if (chara.y > 480){
      gameScreen = 2;
    }
 }
@@ -158,6 +160,18 @@ float platfY;
      
       for(int i=0; i<platforms.size(); i++){
          image (green, platforms.get(i).getX(), platforms.get(i).getY());
+         
+          if(chara.x < platforms.get(i).getX() + 45 &&
+       chara.x + 50 > platforms.get(i).getX() &&
+       chara.y + 25 + (50/4) < platforms.get(i).getY() + 11 &&
+       chara.y + 50 > platforms.get(i).getY())
+       {
+         if (chara.yVel > 0) {
+           chara.yVel -= 20;
+         }
+       }
+         
+         
       }
 
 /*
@@ -198,7 +212,21 @@ float platfY;
     
   //float newPX = random(0, width);
   //float newPY = random(0, (height/2));
+  
+  /*
+  void intersect(){
+    if(chara.x < platforms.get(i).getX() + 45 &&
+       chara.x + 50 > platforms.get(i).getX() &&
+       chara.y + 25 + (50/4) < platforms.get(i).getY() + 11 &&
+       chara.y + 50 > platforms.get(i).getY())
+       {
+         if (chara.yVel > 0) {
+           chara.yVel = - chara.gravity;
+         }
+       }
+  }
 
+ /*
    void intersect(){
       for(int i=0; i<platforms.size(); i++){
         if((platforms.get(i).getX() >= chara.getX() &&
@@ -213,6 +241,7 @@ float platfY;
         }//if
      }//for
   }//intersect
+  */
 
 //determine which screen gets set
 void startGame(){

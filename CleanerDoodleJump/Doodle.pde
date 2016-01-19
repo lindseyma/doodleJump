@@ -69,6 +69,8 @@ class Doodle{
  
  
  //accessor and set methods ayy//////////////////
+ //don't need these lol class.(desiredvariable) does this already
+ 
  float getY(){
           return y;
         }
