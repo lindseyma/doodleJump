@@ -54,6 +54,7 @@ void initScreen() {
 }
 
 void gameScreen() {
+  println(score);
   // codes of gameplay screen
   bg = loadImage ("background.png");
   bg.resize(320, 480);
@@ -187,9 +188,14 @@ float platfY;
        */
    }
    
+   int score;
+   //add to score when plat scrolls
+   //will implement better score system if there is time.
+   
    void platScroll(){
      for(int i=0; i<platforms.size(); i++){
        platforms.get(i).changeY(platforms.get(i).getY()+10);
+       score += 10;
        if (platforms.get(i).getY()>height){
          platforms.remove(i);
          i--;
