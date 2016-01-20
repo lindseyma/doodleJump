@@ -10,7 +10,6 @@ Doodle chara;
 void setup(){
   size(320, 480);
   chara = new Doodle(135, 330);
-  frameRate(30);
   initPlatSetup();
 }
 
@@ -29,6 +28,7 @@ void draw(){
   //println("charCoord" + chara.getX() + "," + chara.getY());
   //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
   //println(chara.getYVel());
+  println(mouseX + ", " + mouseY);
 }
 
 //screen contents
@@ -94,7 +94,7 @@ void gameOverScreen() {
   image(gameover, 0, 30);
  
   text(score, 200, 150);
-  fill(50);
+  fill(50);    
   
 }
 
@@ -106,6 +106,13 @@ void mousePressed(){
       mouseY < 232 &&
       gameScreen==0){
      startGame();
+      }
+   if (mouseX > 105 && 
+      mouseX < 281 && 
+      mouseY > 162 &&
+      mouseY < 296 &&
+      gameScreen==2){
+      gameScreen = 0;
       }
 }
 
