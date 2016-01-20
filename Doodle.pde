@@ -61,12 +61,15 @@ class Doodle{
    yVel += gravity;
    yVel = min(yVel, maxY);
    yVel = max(yVel, -maxY);
+   if (platScroll) {
+     y += 10;
+   }
  }
  
  
  //gravity
  float yVel;
- float maxY = 7; //at this point, the player would go back down
+ float maxY = 10; //at this point, the player would go back down
  float gravity = .3;
  //float airfriction = .001;
  

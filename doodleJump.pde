@@ -193,7 +193,10 @@ float platfY;
    //add to score when plat scrolls
    //will implement better score system if there is time.
    
+   boolean platScroll = false;
+   
    void platScroll(){
+     platScroll=true;
      for(int i=0; i<platforms.size(); i++){
        platforms.get(i).changeY(platforms.get(i).getY()+10);
        score += 10;
@@ -203,6 +206,8 @@ float platfY;
          newPlats();
        }
      }
+     platScroll = false;
+
    }
   
   void cleanUp(){
