@@ -61,9 +61,6 @@ class Doodle{
    yVel += gravity;
    yVel = min(yVel, maxY);
    yVel = max(yVel, -maxY);
-   if (platScroll) {
-     y += 10;
-   }
  }
  
  

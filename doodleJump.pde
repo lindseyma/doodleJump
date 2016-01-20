@@ -76,9 +76,9 @@ void gameScreen() {
 
    cleanUp();
    
-   if (chara.y > 480){
+   /*if (chara.y > 480){
      gameScreen = 2;
-   }
+   }*/
 }
 
 PImage gameover;
@@ -212,7 +212,7 @@ float platfY;
   
   void platScroll(){
     float flightLeft = height/2 - chara.getY();
-    chara.setY(height/2);
+    chara.y+=flightLeft;
     for (int i=0; i<platforms.size(); i++){
       platforms.get(i).changeY(platforms.get(i).getY()+flightLeft);
       score += flightLeft;
