@@ -193,9 +193,9 @@ float platfY;
    //add to score when plat scrolls
    //will implement better score system if there is time.
    
-   boolean platScroll = false;
+   //boolean platScroll = false;
    
-   void platScroll(){
+   /*void platScroll(){
      platScroll=true;
      for(int i=0; i<platforms.size(); i++){
        platforms.get(i).changeY(platforms.get(i).getY()+10);
@@ -208,8 +208,22 @@ float platfY;
      }
      platScroll = false;
 
-   }
+   }*/
   
+  void platScroll(){
+    float flightLeft = height/2 - chara.getY();
+    chara.setY(height/2);
+    for (int i=0; i<platforms.size(); i++){
+      platforms.get(i).changeY(platforms.get(i).getY()+flightLeft);
+      score += flightLeft;
+      if (platforms.get(i).getY()>height){
+           platforms.remove(i);
+           i--;
+           newPlats();
+         }
+    }
+  }
+    
   void cleanUp(){
     for(int i=0; i<platforms.size(); i++){
       if (platforms.get(i).getY()>height){
