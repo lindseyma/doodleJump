@@ -31,7 +31,7 @@ Lindsey:
 -implemented scoring
 -rewrote scrolling to stop the "super jump" bug
 -introduced bug: game stops after scroll [FIXED]
--FIXED THE JUMPING. minimum of the game is done now!!!!!!
+-FIXED THE JUMPING COMPLETELY. minimum of the game is done now!!!!!!
 -minor bug introduced: doodle flashes when scrolling
 -score now shows on game over screen
 -play again button on game over screen now works

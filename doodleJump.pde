@@ -12,6 +12,7 @@ void setup(){
 }
 
 void gameSetup(){
+  score = 0;
   chara = new Doodle(135, 330);
   initPlatSetup();
 }
@@ -56,7 +57,7 @@ void initScreen() {
 }
 
 void gameScreen() {
-  println(score);
+  //println(score);
   // codes of gameplay screen
   bg = loadImage ("background.png");
   bg.resize(320, 480);
