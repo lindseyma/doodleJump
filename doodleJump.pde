@@ -189,16 +189,8 @@ float platfY;
          if (chara.yVel > 0) {
            chara.yVel -= 20;
          }
-       }
-         
-         
+       }        
       }
-
-/*
-     for(int i=0; i<platforms.size(); i++){
-         line(platforms.get(i).getX(), platforms.get(i).getY(), (platforms.get(i).getX())+35, platforms.get(i).getY());   
-       }
-       */
    }
    
    int score;
@@ -234,39 +226,6 @@ float platfY;
     //if (replacePlat){*/
     platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
-    
-  //float newPX = random(0, width);
-  //float newPY = random(0, (height/2));
-  
-  /*
-  void intersect(){
-    if(chara.x < platforms.get(i).getX() + 45 &&
-       chara.x + 50 > platforms.get(i).getX() &&
-       chara.y + 25 + (50/4) < platforms.get(i).getY() + 11 &&
-       chara.y + 50 > platforms.get(i).getY())
-       {
-         if (chara.yVel > 0) {
-           chara.yVel = - chara.gravity;
-         }
-       }
-  }
-
- /*
-   void intersect(){
-      for(int i=0; i<platforms.size(); i++){
-        if((platforms.get(i).getX() >= chara.getX() &&
-           platforms.get(i).getX() + 35 >= chara.getX()) &&
-           (platforms.get(i).getY() >= chara.getY() &&
-           platforms.get(i).getY() - 3 <= chara.getY()) &&
-           chara.getYVel() > 0) { //this checks that the player is falling down
-             chara.setY(-8);
-             println("charCoord" + chara.getX() + "," + chara.getY());
-             println(platforms.get(i).getX() + "," + platforms.get(i).getY());
-             //println(chara.getYVel());
-        }//if
-     }//for
-  }//intersect
-  */
 
 //determine which screen gets set
 void startGame(){

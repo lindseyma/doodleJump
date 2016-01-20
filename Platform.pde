@@ -16,7 +16,6 @@ class Platform{
    float getY(){
      return platY;
    }
-   ////
    
    //change methods//
    void changeX(float newX){
