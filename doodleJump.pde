@@ -145,6 +145,7 @@ float platfY;
      green = loadImage("green_platform.png");
      green.resize(45,11);
      
+     platforms.add(new Platform(135, 430));
      
      int initPlat = int(random(3,7));
      int sectionSize = height/initPlat;
