@@ -33,3 +33,4 @@ Lindsey:
 -introduced bug: game stops after scroll [FIXED]
 -FIXED THE JUMPING. minimum of the game is done now!!!!!!
 -minor bug introduced: doodle flashes when scrolling
+-score now shows on game over screen

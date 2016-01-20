@@ -76,15 +76,15 @@ void gameScreen() {
 
    cleanUp();
    
-   /*if (chara.y > 480){
+   if (chara.y > 480){
      gameScreen = 2;
-   }*/
+   }
 }
 
 PImage gameover;
 
 void gameOverScreen() {
-  // codes for game over screen
+  // code for game over screen
   
   bg = loadImage ("background.png");
   bg.resize(320, 480);
@@ -93,7 +93,8 @@ void gameOverScreen() {
   gameover = loadImage("gameover.png");
   image(gameover, 0, 30);
  
-  
+  text(score, 200, 150);
+  fill(50);
   
 }
 
@@ -190,25 +191,6 @@ float platfY;
    }
    
    int score;
-   //add to score when plat scrolls
-   //will implement better score system if there is time.
-   
-   //boolean platScroll = false;
-   
-   /*void platScroll(){
-     platScroll=true;
-     for(int i=0; i<platforms.size(); i++){
-       platforms.get(i).changeY(platforms.get(i).getY()+10);
-       score += 10;
-       if (platforms.get(i).getY()>height){
-         platforms.remove(i);
-         i--;
-         newPlats();
-       }
-     }
-     platScroll = false;
-
-   }*/
   
   void platScroll(){
     float flightLeft = height/2 - chara.getY();

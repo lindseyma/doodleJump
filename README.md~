@@ -29,3 +29,7 @@ Changelog:
 01.20.2015
 Lindsey: 
 -implemented scoring
+-rewrote scrolling to stop the "super jump" bug
+-introduced bug: game stops after scroll [FIXED]
+-FIXED THE JUMPING. minimum of the game is done now!!!!!!
+-minor bug introduced: doodle flashes when scrolling
