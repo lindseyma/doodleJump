@@ -36,3 +36,5 @@ Lindsey:
 -score now shows on game over screen
 -play again button on game over screen now works
 -rewrote setup and game initiation methods for play again button to work better
+-added scores to bottom of game screen
+-fixed problem of not enough initial platforms

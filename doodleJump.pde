@@ -159,7 +159,7 @@ float platfY;
      
      platforms.add(new Platform(135, 430));
      
-     int initPlat = int(random(3,7));
+     int initPlat = int(random(4,7));
      int sectionSize = height/initPlat;
      
      for(int i=1; i<initPlat; i++){
@@ -171,6 +171,8 @@ float platfY;
   
    
    void display(){
+     text(score, 260, 470);
+     fill(50); 
      
       for(int i=0; i<platforms.size(); i++){
          image (green, platforms.get(i).getX(), platforms.get(i).getY());
