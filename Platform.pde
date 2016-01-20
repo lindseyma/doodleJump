@@ -26,5 +26,6 @@ class Platform{
    void changeY(float newY){
      platY=newY;
    }
-
+   
+   
 }

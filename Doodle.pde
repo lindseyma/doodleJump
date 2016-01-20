@@ -1,101 +1,91 @@
-class Doodle {
-         float gravity = 0.8;
-         float speed = 0;
-         
-         float velY;
-         float time;
-         float newTime;
+class Doodle{
   
-         PImage chara;
-         PImage charaRight;
-        
-         float x;
-         float y;
-         float velX = 5;
-         
-        Doodle(float x, float y){
-            this.x=x;
-            this.y=y;
-        }
-          
-       boolean left; boolean right;
-       boolean flip;
-        
-        
-        void display(){
-          
-          chara = loadImage("doodle_left.png");
-          chara.resize(50,50);
-          charaRight = loadImage("doodle_right.png");
-          charaRight.resize(50,50);
-          
-          
-          if (flip){
-            image (charaRight, x, y);
-          }else{
-            image (chara, x, y);
-          }
-         
-          
-        //////////////////////////////////////////////////////////////////X
-        //println("test");
-       // println(mouseX + " : " + mouseY);
-       //println(frameCount); ~20 framecounts = one jump?
-        if (keyPressed){
-           //println("hey");
-           if(key=='a'){ 
-             left = true;
-             flip = false;
-          
-           }
-           if(key=='d'){
-             right = true;
-             flip = true;
-         
-           }
-        }
-        if(keyPressed==false){
-          left=false;
-          right=false;
-        }
-      
-        //println(left);
-         if(left){
-              x-=20;
-       
-            }
-            if(right){
-              x+=20;
-             
-              
-            }         
-            
-            
-         //wrapping ayy
-         if(x>320){
-           float temp = x - 320;
-           x = temp;
-         }
-         if(x<0){
-           float temp = 0 - x;
-           x= 320 - temp;
-         }
-        //println(x + "," + y);
-        
-        
-        //gravity part
-        
-        y = y + speed;
-        speed = speed + gravity;
-        
-        //make chara stop at bottom, prob need to adjust for platforms later
-      
-        }
-        
-        //accessor
-        
-        float getY(){
+  float x;
+  float y;
+  
+  //constructor
+ Doodle(float x, float y){
+   this.x=x;
+   this.y=y;
+ }  
+ 
+ PImage chara;
+ PImage charaRight;
+ boolean flip;
+ 
+ //show doodle
+ void display(){
+   chara = loadImage("doodle_left.png");
+   chara.resize(50, 50);
+ 
+   charaRight = loadImage("doodle_right.png");
+   charaRight.resize(50, 50);
+   
+   if (flip){
+     image (charaRight, x, y);
+   } else {
+     image (chara, x, y);
+   }
+     
+   
+   if(x>320){
+     float temp = x - 320;
+     x = temp;
+   }
+  if(x<0){
+     float temp = 0 - x;
+     x= 320 - temp;
+   }
+ }
+ 
+ //movement
+ float xspeed = 10.0;
+ float left;
+ float right; 
+ //float up;
+ float smoothen = .001;
+ 
+ void movement(){
+   x += (right - left) * xspeed;   
+   x -= (right - left) * (xspeed * smoothen);
+   //y += up * 30;
+   y+=yVel;
+   yVel += gravity;
+   yVel = min(yVel, maxY);
+   yVel = max(yVel, -maxY);
+ }
+ 
+ 
+ //gravity
+ float yVel;
+ float maxY = 10; //at this point, the player would go back down
+ float gravity = .3;
+ //float airfriction = .001;
+ 
+ 
+ /*void gravity(){
+   y += yVel;
+   yVel += gravity;
+   yVel -= (yVel * airfriction);
+ }*/
+ 
+ 
+ //accessor and set methods ayy//////////////////
+ //don't need these lol class.(desiredvariable) does this already
+ 
+ float getY(){
           return y;
         }
-
+ 
+ float getX(){
+   return x;
+ }
+ 
+ float getYVel(){
+   return yVel;
+ }
+ 
+ void setY(float newY){
+   yVel = newY;
+ }
 }
