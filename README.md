@@ -13,9 +13,14 @@ Move character with "a" and "d" keys
 Changelog:
 1/19/16
 -new features:
+  -malfunctioning graphics when jumping
+  
+-new bugs:
+  -crouching image shows both itself directional one
 
 -goals:
   -fix scrolling/jumping
+  -fix weird graphics
   -update game over screen
   -add jumping noises
   -add score counter
