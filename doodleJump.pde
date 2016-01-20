@@ -166,6 +166,12 @@ float platfY;
        chara.y + 25 + (50/4) < platforms.get(i).getY() + 11 &&
        chara.y + 50 > platforms.get(i).getY())
        {
+         if (chara.flip){
+           image(chara.crouchRight, chara.x, chara.y);
+         } else {
+           image(chara.crouch, chara.x, chara.y);
+         }
+           
          if (chara.yVel > 0) {
            chara.yVel -= 20;
          }

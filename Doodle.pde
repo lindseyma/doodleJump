@@ -10,16 +10,24 @@ class Doodle{
  }  
  
  PImage chara;
+ PImage crouch;
  PImage charaRight;
+ PImage crouchRight;
+ 
  boolean flip;
  
  //show doodle
  void display(){
    chara = loadImage("doodle_left.png");
    chara.resize(50, 50);
+   crouch = loadImage("doodle_left_crouch.png");
+   crouch.resize(50,50);
  
    charaRight = loadImage("doodle_right.png");
    charaRight.resize(50, 50);
+   crouchRight = loadImage("doodle_right_crouch.png");
+   crouchRight.resize(50,50);
+ 
    
    if (flip){
      image (charaRight, x, y);
