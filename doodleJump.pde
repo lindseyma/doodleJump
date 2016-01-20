@@ -9,15 +9,17 @@ Doodle chara;
 //setup
 void setup(){
   size(320, 480);
+}
+
+void gameSetup(){
   chara = new Doodle(135, 330);
   initPlatSetup();
 }
 
 //draw
-
 void draw(){
-  println("charCoord" + chara.getX() + "," + chara.getY());
-  println(platforms.get(0).getX() + "," + platforms.get(0).getY());
+  //println("charCoord" + chara.getX() + "," + chara.getY());
+  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
    if (gameScreen == 0) {
     initScreen();
   } else if (gameScreen == 1) {
@@ -105,6 +107,7 @@ void mousePressed(){
       mouseY > 194 && 
       mouseY < 232 &&
       gameScreen==0){
+      gameSetup();
      startGame();
       }
    if (mouseX > 105 && 
@@ -112,7 +115,8 @@ void mousePressed(){
       mouseY > 162 &&
       mouseY < 296 &&
       gameScreen==2){
-      gameScreen = 0;
+      gameSetup();
+      startGame();
       }
 }
 

@@ -34,3 +34,5 @@ Lindsey:
 -FIXED THE JUMPING. minimum of the game is done now!!!!!!
 -minor bug introduced: doodle flashes when scrolling
 -score now shows on game over screen
+-play again button on game over screen now works
+-rewrote setup and game initiation methods for play again button to work better
