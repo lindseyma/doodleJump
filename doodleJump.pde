@@ -59,12 +59,10 @@ void initScreen() {
 }
 
 void gameScreen() {
-<<<<<<< HEAD
   
   println(score);
-=======
+
   //println(score);
->>>>>>> 3e68bd8fba3b7b6ab40875f913e9b83d8096a877
   // codes of gameplay screen
   bg = loadImage ("background.png");
   bg.resize(320, 480);
@@ -123,13 +121,9 @@ void mousePressed(){
       mouseY > 162 &&
       mouseY < 296 &&
       gameScreen==2){
-<<<<<<< HEAD
-      gameScreen = 1;
-      setup();
-=======
+
       gameSetup();
       startGame();
->>>>>>> 3e68bd8fba3b7b6ab40875f913e9b83d8096a877
       }
 }
 
