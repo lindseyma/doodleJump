@@ -80,13 +80,6 @@ class Doodle{
  float gravity = 1;
  //float airfriction = .001;
  
- 
- /*void gravity(){
-   y += yVel;
-   yVel += gravity;
-   yVel -= (yVel * airfriction);
- }*/
- 
  float getY(){
           return y;
         }

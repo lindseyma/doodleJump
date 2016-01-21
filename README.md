@@ -1,7 +1,7 @@
 # doodleJump
 
 Description:
-Recreation of Doodle Jump in Processing (or at least the attempt to recreate it)
+Recreation of Doodle Jump
 
 Directions to run:
 Open doodleJump
@@ -31,6 +31,11 @@ Lindsey:
 -implemented scoring
 -rewrote scrolling to stop the "super jump" bug
 -introduced bug: game stops after scroll [FIXED]
--FIXED THE JUMPING. minimum of the game is done now!!!!!!
+-FIXED THE JUMPING COMPLETELY. minimum of the game is done now!!!!!!
 -minor bug introduced: doodle flashes when scrolling
 -score now shows on game over screen
+-play again button on game over screen now works
+-rewrote setup and game initiation methods for play again button to work better
+-added scores to bottom of game screen
+-fixed problem of not enough initial platforms
+-started on monster class
