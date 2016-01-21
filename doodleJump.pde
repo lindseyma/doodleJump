@@ -90,6 +90,7 @@ void gameScreen() {
 }
 
 PImage gameover;
+PImage playagainbutton;
 
 void gameOverScreen() {
   // code for game over screen
@@ -100,6 +101,16 @@ void gameOverScreen() {
   
   gameover = loadImage("gameover.png");
   image(gameover, 0, 30);
+  
+  playagainbutton = loadImage ("play-again.png");
+  playagainbutton.resize(112, 41);
+  
+    if (mouseX > 105 && 
+      mouseX < 281 && 
+      mouseY > 162 &&
+      mouseY < 296 ){
+  image(playagainbutton, 104, 255);
+      }
  
   text(score, 200, 150);
   fill(50);    
@@ -183,15 +194,15 @@ float platfY;
   
    
    void display(){
-     text(score, 260, 470);
-     fill(50); 
+     text(score, 20, 20);
+     fill(0); 
      
       for(int i=0; i<platforms.size(); i++){
          image (green, platforms.get(i).getX(), platforms.get(i).getY());
          
           if(chara.x < platforms.get(i).getX() + 45 &&
        chara.x + 50 > platforms.get(i).getX() &&
-       chara.y + 25 + (50/4) < platforms.get(i).getY() + 11 &&
+       chara.y + 25 + (50/2) < platforms.get(i).getY() + 11 &&
        chara.y + 50 > platforms.get(i).getY())
        {
            
