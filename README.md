@@ -26,7 +26,7 @@ Changelog:
   -add score counter
   -finish bare minimum project by deadline
 
-01.20.2015
+01.20.2016
 Lindsey: 
 -implemented scoring
 -rewrote scrolling to stop the "super jump" bug
@@ -39,3 +39,7 @@ Lindsey:
 -added scores to bottom of game screen
 -fixed problem of not enough initial platforms
 -started on monster class
+
+Catherine:
+-decided to give up on crouching image for now
+-adjusted gravity and movements to go faster
