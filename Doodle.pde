@@ -15,6 +15,8 @@ class Doodle{
  PImage crouchRight;
  
  boolean flip;
+ boolean onPlatformLeft;
+ boolean onPlatformRight;
  
  //show doodle
  void display(){
@@ -34,6 +36,14 @@ class Doodle{
    } else {
      image (chara, x, y);
    }
+   
+   if (onPlatformRight){
+     image (crouchRight, x, y);
+   }
+   
+   if(onPlatformLeft){
+     image (crouch, x, y);
+   }
      
    
    if(x>320){
@@ -47,7 +57,7 @@ class Doodle{
  }
  
  //movement
- float xspeed = 10.0;
+ float xspeed = 15.0;
  float left;
  float right; 
  //float up;
@@ -66,8 +76,8 @@ class Doodle{
  
  //gravity
  float yVel;
- float maxY = 10; //at this point, the player would go back down
- float gravity = .3;
+ float maxY = 20; //at this point, the player would go back down
+ float gravity = 1;
  //float airfriction = .001;
  
  

@@ -20,9 +20,11 @@ void draw(){
   println(platforms.get(0).getX() + "," + platforms.get(0).getY());
    if (gameScreen == 0) {
     initScreen();
-  } else if (gameScreen == 1) {
+  } 
+  if (gameScreen == 1) {
     gameScreen();
-  } else if (gameScreen == 2) {
+  } 
+  if (gameScreen == 2) {
     gameOverScreen();
   }
   //println("charCoord" + chara.getX() + "," + chara.getY());
@@ -54,6 +56,7 @@ void initScreen() {
 }
 
 void gameScreen() {
+  
   println(score);
   // codes of gameplay screen
   bg = loadImage ("background.png");
@@ -112,28 +115,34 @@ void mousePressed(){
       mouseY > 162 &&
       mouseY < 296 &&
       gameScreen==2){
-      gameScreen = 0;
+      gameScreen = 1;
+      setup();
       }
 }
 
 void keyPressed(){
   if (key == 'a'){
+    
     chara.left = 1;
     chara.flip = false;
   }
   
   if (key == 'd'){
+    
     chara.right = 1;
     chara.flip = true;
-  }
+  
+}
 }
 
 void keyReleased(){
   if (key == 'a'){
+    
     chara.left = 0;
   }
   
   if (key == 'd'){
+     
     chara.right = 0;
   }
   
@@ -176,14 +185,9 @@ float platfY;
        chara.y + 25 + (50/4) < platforms.get(i).getY() + 11 &&
        chara.y + 50 > platforms.get(i).getY())
        {
-         if (chara.flip){
-           image(chara.crouchRight, chara.x, chara.y);
-         } else {
-           image(chara.crouch, chara.x, chara.y);
-         }
            
          if (chara.yVel > 0) {
-           chara.yVel -= 20;
+           chara.yVel -= 30;
          }
        }
          
