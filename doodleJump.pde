@@ -2,6 +2,7 @@
 // 0: initial
 // 1: gameplay
 // 2: game-over
+// 3: instructions
 
 int gameScreen = 0;
 Doodle chara;
@@ -29,6 +30,10 @@ void draw(){
   } 
   if (gameScreen == 2) {
     gameOverScreen();
+  }
+  
+  if (gameScreen == 3) {
+    instructionScreen();
   }
   //println("charCoord" + chara.getX() + "," + chara.getY());
   //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
@@ -86,8 +91,13 @@ void gameScreen() {
    monsterGen();
    
    if (chara.y > 480){
+     fall();
+  
      gameScreen = 2;
    }
+}
+
+void fall(){
 }
 
 PImage gameover;
@@ -116,6 +126,9 @@ void gameOverScreen() {
   text(score, 200, 150);
   fill(50);    
   
+}
+
+void instructionScreen(){
 }
 
 //inputs
