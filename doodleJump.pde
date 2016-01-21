@@ -80,9 +80,10 @@ void gameScreen() {
   chara.display();
   //chara.gravity();
   chara.movement();
-  
 
-   cleanUp();
+  cleanUp();
+   
+   monsterGen();
    
    if (chara.y > 480){
      gameScreen = 2;
@@ -121,7 +122,6 @@ void mousePressed(){
       mouseY > 162 &&
       mouseY < 296 &&
       gameScreen==2){
-
       gameSetup();
       startGame();
       }
@@ -171,7 +171,7 @@ float platfY;
      
      platforms.add(new Platform(135, 430));
      
-     int initPlat = int(random(4,7));
+     int initPlat = int(random(5,7));
      int sectionSize = height/initPlat;
      
      for(int i=1; i<initPlat; i++){
@@ -235,6 +235,17 @@ float platfY;
     //if (replacePlat){*/
     platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
+    
+  //method for monsters appearing
+  void monsterGen(){
+   boolean monster;
+   if( (int)(random(0,20)) == 15){
+     monster = true;
+   }//if to decide monster boolean
+   if(monster){
+     monsters.add(new Monster((float)(random(0, width - 35)), -1));
+   }//generating of monster
+  }
 
 //determine which screen gets set
 void startGame(){
