@@ -72,15 +72,12 @@ void gameScreen() {
   bg = loadImage ("background.png");
   bg.resize(320, 480);
   background(bg);
- 
-  
-   display();
-   
+  display();//disp plats
+  displayM();//disp mons
    
    if(chara.y <= height/2){
      platScroll();
    }
-  
    
   chara.display();
   //chara.gravity();
@@ -269,12 +266,13 @@ float platfY;
   
   //method for monsters appearing
   void monsterGen(){
-   if( (int)(random(0,20)) == 15){
+   if( (int)(random(0,300)) == 28){
      monster = true;
    }//if to decide monster boolean
    if(monster){
      monsters.add(new Monster((float)(random(0, width - 35)), -1));
    }//generating of monster
+   monster=false;
   }
   
   void displayM(){
