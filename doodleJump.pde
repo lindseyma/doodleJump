@@ -241,15 +241,22 @@ float platfY;
   //array of current monsters on screen
   ArrayList<Monster> monsters= new ArrayList<Monster>();
   
+  boolean monster;
+  
   //method for monsters appearing
   void monsterGen(){
-   boolean monster;
    if( (int)(random(0,20)) == 15){
      monster = true;
    }//if to decide monster boolean
    if(monster){
      monsters.add(new Monster((float)(random(0, width - 35)), -1));
    }//generating of monster
+  }
+  
+  void displayM(){
+    for(int i=0; i<monsters.size(); i++){
+      rect(monsters.get(i).getX(), monsters.get(i).getY(), 30, 30);
+    }
   }
 
 //determine which screen gets set

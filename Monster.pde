@@ -8,4 +8,13 @@ class Monster{
     this.monY = monY;
   }//constructor
   
+  //accessor methods!
+  float getX(){
+    return monX;
+  }
+  
+  float getY(){
+    return monY;
+  }
+  
 }
