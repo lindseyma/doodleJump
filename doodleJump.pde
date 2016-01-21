@@ -155,7 +155,7 @@ void keyReleased(){
   
 }
 
-//platform stuff
+//platform stuff/////////////////////////////////////////
 
 ArrayList<Platform> platforms= new ArrayList<Platform>();
 
@@ -235,7 +235,12 @@ float platfY;
     //if (replacePlat){*/
     platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
-    
+   
+  //monster stuff /////////////////////////////////////////////////////
+  
+  //array of current monsters on screen
+  ArrayList<Monster> monsters= new ArrayList<Monster>();
+  
   //method for monsters appearing
   void monsterGen(){
    boolean monster;
