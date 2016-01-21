@@ -1,7 +1,7 @@
 # doodleJump
 
 Description:
-Recreation of Doodle Jump in Processing (or at least the attempt to recreate it)
+Recreation of Doodle Jump
 
 Directions to run:
 Open doodleJump
@@ -38,3 +38,4 @@ Lindsey:
 -rewrote setup and game initiation methods for play again button to work better
 -added scores to bottom of game screen
 -fixed problem of not enough initial platforms
+-started on monster class
