@@ -237,6 +237,15 @@ float platfY;
            newPlats();
          }
     }
+    if(monsters.size()>0){
+    for (int i=0; i<platforms.size(); i++){
+      monsters.get(i).setY(monsters.get(i).getY()+flightLeft);
+      if(monsters.get(i).getY()>height){
+        monsters.remove(i);
+        i--;
+      }
+    }//for platform scroll -> works diff from plat because of the generation method
+  }
   }
     
   void cleanUp(){

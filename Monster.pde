@@ -17,4 +17,13 @@ class Monster{
     return monY;
   }
   
+  //set methods 
+  void setX(float newX){
+    monX=newX;
+  }
+  
+  void setY(float newY){
+    monY=newY;
+  }
+  
 }
