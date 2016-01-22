@@ -21,6 +21,10 @@ void gameSetup(){
       monsters.remove(i);
     }
   }
+  
+  for(int j=0; j<platforms.size(); j++){
+    platforms.remove(j);
+  }
 }
 
 //draw
@@ -200,11 +204,9 @@ float platfY;
    
    void display(){
      text(score, 20, 20);
-     fill(0); 
-     
+     fill(0);      
       for(int i=0; i<platforms.size(); i++){
-         image (green, platforms.get(i).getX(), platforms.get(i).getY());
-         
+         image (green, platforms.get(i).getX(), platforms.get(i).getY());         
           if(chara.x < platforms.get(i).getX() + 45 &&
        chara.x + 50 > platforms.get(i).getX() &&
        chara.y + 25 + (50/2) < platforms.get(i).getY() + 11 &&
@@ -213,9 +215,12 @@ float platfY;
          if (chara.yVel > 0) {
            chara.yVel -= 30;
          }
-       }        
+       }
       }
       
+     /*for(int i=0; i<platforms.size(); i++){
+       if(*/
+       
      for(int i=0; i<monsters.size(); i++){
        if(chara.x < monsters.get(i).getX() + 30 &&
        chara.x + 50 > monsters.get(i).getX() &&
@@ -224,7 +229,7 @@ float platfY;
             gameScreen = 2;
           }
      }
-   }
+   }//display
    
    int score;
   
