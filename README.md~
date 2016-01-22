@@ -38,7 +38,7 @@ Lindsey:
 -rewrote setup and game initiation methods for play again button to work better
 -added scores to bottom of game screen
 -fixed problem of not enough initial platforms
--started on monster class
+-finished basic monster class
 
 Catherine:
 -decided to give up on crouching image for now

@@ -43,3 +43,7 @@ Lindsey:
 Catherine:
 -decided to give up on crouching image for now
 -adjusted gravity and movements to go faster
+
+Lindsey:
+-monster generation method so they come at the right time
+-monster scrolling implementation

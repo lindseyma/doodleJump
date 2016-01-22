@@ -238,7 +238,7 @@ float platfY;
          }
     }
     if(monsters.size()>0){
-    for (int i=0; i<platforms.size(); i++){
+    for (int i=0; i<monsters.size(); i++){
       monsters.get(i).setY(monsters.get(i).getY()+flightLeft);
       if(monsters.get(i).getY()>height){
         monsters.remove(i);
