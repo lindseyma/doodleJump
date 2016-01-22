@@ -214,13 +214,21 @@ float platfY;
        chara.x + 50 > platforms.get(i).getX() &&
        chara.y + 25 + (50/2) < platforms.get(i).getY() + 11 &&
        chara.y + 50 > platforms.get(i).getY())
-       {
-           
+       {           
          if (chara.yVel > 0) {
            chara.yVel -= 30;
          }
        }        
       }
+      
+     for(int i=0; i<monsters.size(); i++){
+       if(chara.x < monsters.get(i).getX() + 30 &&
+       chara.x + 50 > monsters.get(i).getX() &&
+          chara.y + 25 + (50/2) < monsters.get(i).getY() + 30 &&
+          chara.y + 50 > monsters.get(i).getY()){
+            gameScreen = 2;
+          }
+     }
    }
    
    int score;

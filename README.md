@@ -47,3 +47,4 @@ Catherine:
 Lindsey:
 -monster generation method so they come at the right time
 -monster scrolling implementation
+-monsters now kill!!
