@@ -29,8 +29,16 @@ class Platform{
 
 class hPlat extends Platform{
   
+  hPlat(float platX, float platY){
+    super(platX, platY);
+  }
+  
 }
 
 class vPlat extends Platform{
+  
+  vPlat(float platX, float platY){
+    super(platX, platY);
+  }
   
 }
