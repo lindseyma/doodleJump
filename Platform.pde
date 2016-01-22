@@ -24,7 +24,13 @@ class Platform{
    
    void changeY(float newY){
      platY=newY;
-   }
-   
-   
+   }  
+}
+
+class hPlat extends Platform{
+  
+}
+
+class vPlat extends Platform{
+  
 }
