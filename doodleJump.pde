@@ -16,6 +16,11 @@ void gameSetup(){
   score = 0;
   chara = new Doodle(135, 330);
   initPlatSetup();
+  if(monsters.size()>0){
+    for(int i=0; i<monsters.size(); i++){
+      monsters.remove(i);
+    }
+  }
 }
 
 //draw
