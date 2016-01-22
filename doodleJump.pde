@@ -25,8 +25,6 @@ void gameSetup(){
 
 //draw
 void draw(){
-  //println("charCoord" + chara.getX() + "," + chara.getY());
-  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
    if (gameScreen == 0) {
     initScreen();
   } 
@@ -40,10 +38,6 @@ void draw(){
   if (gameScreen == 3) {
     instructionScreen();
   }
-  //println("charCoord" + chara.getX() + "," + chara.getY());
-  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
-  //println(chara.getYVel());
-  println(mouseX + ", " + mouseY);
 }
 
 //screen contents
@@ -52,7 +46,7 @@ PImage playbutton;
 PImage playonbutton;
 
 void initScreen() {
-  // codes of initial screen
+  //initial screen
   bg = loadImage ("doodle jump title screen.png");
   playbutton = loadImage("play.png");
   playonbutton = loadImage("play-on.png");
@@ -69,11 +63,7 @@ void initScreen() {
 }
 
 void gameScreen() {
-  
-  println(score);
-
-  //println(score);
-  // codes of gameplay screen
+  //gameplay screen
   bg = loadImage ("background.png");
   bg.resize(320, 480);
   background(bg);
@@ -271,13 +261,17 @@ float platfY;
   }
     
   void newPlats(){
-    /*boolean replacePlat;
-    if(((int)random(1,2)) % 2 == 0){
-      replacePlat = true;
-    }//if to assign replacePlat
-    //if (replacePlat){*/
+    int whatPlat = (int)random(0,300);
+    if (whatPlat == 28){
+      platforms.add(new vPlat((float)(random(0, width - 35)), -1));
+    }
+    if(whatPlat == 10){
+      platforms.add(new hPlat((float)(random(0, width - 35)), -1));
+    }
+    else{
     platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
+  }
    
   //monster stuff /////////////////////////////////////////////////////
   
