@@ -268,10 +268,10 @@ float platfY;
   void newPlats(){
     int whatPlat = (int)random(0,300);
     if (whatPlat == 28){
-      platforms.add(new vPlat((float)(random(0, width - 35)), -1));
+     // platforms.add(new vPlat((float)(random(0, width - 35)), -1));
     }
     if(whatPlat == 10){
-      platforms.add(new hPlat((float)(random(0, width - 35)), -1));
+    //  platforms.add(new hPlat((float)(random(0, width - 35)), -1));
     }
     else{
     platforms.add(new Platform((float)(random(0, width - 35)), -1));

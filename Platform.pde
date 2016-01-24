@@ -26,9 +26,9 @@ class Platform{
      platY=newY;
    }  
 }
+/*
 
-
-class hPlat extends Platform implements moves{
+class hPlat extends Platform implements Moves{
   
   hPlat(float platX, float platY){
     super(platX, platY);
@@ -46,7 +46,7 @@ class hPlat extends Platform implements moves{
   }
 }
 
-class vPlat extends Platform implements moves{
+class vPlat extends Platform implements Moves{
   
   vPlat(float platX, float platY){
     super(platX, platY);
@@ -69,4 +69,7 @@ class Moves{
   void move();
   
 }
+
 }
+
+*/
