@@ -21,14 +21,12 @@ void gameSetup(){
       monsters.remove(i);
     }
   }
-  
-  for(int j=0; j<platforms.size(); j++){
-    platforms.remove(j);
-  }
 }
 
 //draw
 void draw(){
+  //println("charCoord" + chara.getX() + "," + chara.getY());
+  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
    if (gameScreen == 0) {
     initScreen();
   } 
@@ -42,6 +40,10 @@ void draw(){
   if (gameScreen == 3) {
     instructionScreen();
   }
+  //println("charCoord" + chara.getX() + "," + chara.getY());
+  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
+  //println(chara.getYVel());
+  println(mouseX + ", " + mouseY);
 }
 
 //screen contents
@@ -50,7 +52,7 @@ PImage playbutton;
 PImage playonbutton;
 
 void initScreen() {
-  //initial screen
+  // codes of initial screen
   bg = loadImage ("doodle jump title screen.png");
   playbutton = loadImage("play.png");
   playonbutton = loadImage("play-on.png");
@@ -67,7 +69,11 @@ void initScreen() {
 }
 
 void gameScreen() {
-  //gameplay screen
+  
+  println(score);
+
+  //println(score);
+  // codes of gameplay screen
   bg = loadImage ("background.png");
   bg.resize(320, 480);
   background(bg);
@@ -142,6 +148,9 @@ void mousePressed(){
       mouseY > 162 &&
       mouseY < 296 &&
       gameScreen==2){
+      for(int j=0; j<platforms.size(); j++){
+     platforms.remove(j);
+   }  
       gameSetup();
       startGame();
       }
@@ -204,9 +213,11 @@ float platfY;
    
    void display(){
      text(score, 20, 20);
-     fill(0);      
+     fill(0); 
+     
       for(int i=0; i<platforms.size(); i++){
-         image (green, platforms.get(i).getX(), platforms.get(i).getY());         
+         image (green, platforms.get(i).getX(), platforms.get(i).getY());
+         
           if(chara.x < platforms.get(i).getX() + 45 &&
        chara.x + 50 > platforms.get(i).getX() &&
        chara.y + 25 + (50/2) < platforms.get(i).getY() + 11 &&
@@ -215,12 +226,9 @@ float platfY;
          if (chara.yVel > 0) {
            chara.yVel -= 30;
          }
-       }
+       }        
       }
       
-     /*for(int i=0; i<platforms.size(); i++){
-       if(*/
-       
      for(int i=0; i<monsters.size(); i++){
        if(chara.x < monsters.get(i).getX() + 30 &&
        chara.x + 50 > monsters.get(i).getX() &&
@@ -229,7 +237,7 @@ float platfY;
             gameScreen = 2;
           }
      }
-   }//display
+   }
    
    int score;
   
@@ -266,17 +274,13 @@ float platfY;
   }
     
   void newPlats(){
-    int whatPlat = (int)random(0,300);
-    if (whatPlat == 28){
-      platforms.add(new vPlat((float)(random(0, width - 35)), -1));
-    }
-    if(whatPlat == 10){
-      platforms.add(new hPlat((float)(random(0, width - 35)), -1));
-    }
-    else{
+    /*boolean replacePlat;
+    if(((int)random(1,2)) % 2 == 0){
+      replacePlat = true;
+    }//if to assign replacePlat
+    //if (replacePlat){*/
     platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
-  }
    
   //monster stuff /////////////////////////////////////////////////////
   

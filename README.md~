@@ -44,8 +44,13 @@ Catherine:
 -decided to give up on crouching image for now
 -adjusted gravity and movements to go faster
 
+1.21.2015
 Lindsey:
 -monster generation method so they come at the right time
 -monster scrolling implementation
 -monsters now kill!!
 -clears screen of monsters when you start a game
+
+1.22.2015
+Lindsey:
+made moving platform classes: they appear, but don't move properly
