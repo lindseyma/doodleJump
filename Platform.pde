@@ -26,7 +26,6 @@ class Platform{
      platY=newY;
    }  
 }
-/*
 
 class hPlat extends Platform implements Moves{
   
@@ -35,7 +34,7 @@ class hPlat extends Platform implements Moves{
   }
   
   void move(){
-    float platVel;
+    float platVel = 5;
     if(platX >= width-55){ //this line will check if the plat is at the v end
       platVel = -5;
     }
@@ -53,7 +52,7 @@ class vPlat extends Platform implements Moves{
   }
   
   void move(){
-    float platVel;
+    float platVel = 5;
     if(platX >= height-21){
       platVel = 5;
     }
@@ -63,13 +62,4 @@ class vPlat extends Platform implements Moves{
     platY += platVel;
   }
   
-
-class Moves{
-  
-  void move();
-  
 }
-
-}
-
-*/
