@@ -25,8 +25,6 @@ void gameSetup(){
 
 //draw
 void draw(){
-  //println("charCoord" + chara.getX() + "," + chara.getY());
-  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
    if (gameScreen == 0) {
     initScreen();
   } 
@@ -40,10 +38,6 @@ void draw(){
   if (gameScreen == 3) {
     instructionScreen();
   }
-  //println("charCoord" + chara.getX() + "," + chara.getY());
-  //println(platforms.get(0).getX() + "," + platforms.get(0).getY());
-  //println(chara.getYVel());
-  println(mouseX + ", " + mouseY);
 }
 
 //screen contents
@@ -69,10 +63,7 @@ void initScreen() {
 }
 
 void gameScreen() {
-  
-  println(score);
 
-  //println(score);
   // codes of gameplay screen
   bg = loadImage ("background.png");
   bg.resize(320, 480);
@@ -276,6 +267,9 @@ float platfY;
     
   void newPlats(){
     int whatPlat = (int)random(0,300);
+    if(whatPlat == 28 || whatPlat == 10){
+      println(whatPlat);
+    }
     if (whatPlat == 28){
       platforms.add(new vPlat((float)(random(0, width - 35)), -1));
     }
@@ -330,7 +324,7 @@ float platfY;
   hole=false;
   
   
-   if( (int)(random(0,150)) == 28){
+   if( (int)(random(0,300)) == 28){
      monster = true;
    }//if to decide monster boolean
    

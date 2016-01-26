@@ -44,13 +44,25 @@ Catherine:
 -decided to give up on crouching image for now
 -adjusted gravity and movements to go faster
 
-1.21.2015
+1.21.2016
 Lindsey:
 -monster generation method so they come at the right time
 -monster scrolling implementation
 -monsters now kill!!
 -clears screen of monsters when you start a game
 
-1.22.2015
+1.22.2016
 Lindsey:
 made moving platform classes: they appear, but don't move properly
+
+1.24.2016
+Lindsey:
+added interface for moving platforms and moving functions
+new bug: platforms stopped generating properly in the beginning of the game
+
+1.25.2016
+Lindsey: fixed bug by going back to an older version and moving part of a method
+
+Catherine:
+added monster pic
+bug noticed: sometimes platform is still too far for doodle to reach

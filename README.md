@@ -62,6 +62,7 @@ new bug: platforms stopped generating properly in the beginning of the game
 
 1.25.2016
 Lindsey: fixed bug by going back to an older version and moving part of a method
+ultimately could not get moving platforms to function properly :(
 
 Catherine:
 added monster pic
