@@ -291,13 +291,35 @@ float platfY;
   //array of current monsters on screen
   ArrayList<Monster> monsters= new ArrayList<Monster>();
   
+  PImage bluemonster;
+  PImage blackhole;
   boolean monster;
+  boolean hole;
   
   //method for monsters appearing
   void monsterGen(){
-   if( (int)(random(0,300)) == 28){
+    
+    blackhole = loadImage("hole.png");
+    blackhole.resize(74, 72);
+    
+    bluemonster = loadImage("blue_monster_left.png");
+    bluemonster.resize(25, 35);
+    
+    
+    if( (int)(random(0,300)) == 28){
+     hole = true;
+   }//if to decide hole
+   
+   if(hole){
+     monsters.add(new Monster((float)(random(0, width - 35)), -1));
+   }//generating of monster
+  hole=false;
+  
+  
+   if( (int)(random(0,150)) == 28){
      monster = true;
    }//if to decide monster boolean
+   
    if(monster){
      monsters.add(new Monster((float)(random(0, width - 35)), -1));
    }//generating of monster
@@ -305,9 +327,15 @@ float platfY;
   }
   
   void displayM(){
+    
+
     for(int i=0; i<monsters.size(); i++){
-      rect(monsters.get(i).getX(), monsters.get(i).getY(), 30, 30);
+      //rect(monsters.get(i).getX(), monsters.get(i).getY(), 30, 30);
+      image(bluemonster, monsters.get(i).getX(), monsters.get(i).getY());
+      
     }
+    
+    
   }
 
 //determine which screen gets set
