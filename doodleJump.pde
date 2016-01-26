@@ -218,6 +218,7 @@ float platfY;
       for(int i=0; i<platforms.size(); i++){
          image (green, platforms.get(i).getX(), platforms.get(i).getY());
          
+         
           if(chara.x < platforms.get(i).getX() + 45 &&
        chara.x + 50 > platforms.get(i).getX() &&
        chara.y + 25 + (50/2) < platforms.get(i).getY() + 11 &&
@@ -280,11 +281,24 @@ float platfY;
     }
     if(whatPlat == 10){
       platforms.add(new hPlat((float)(random(0, width - 35)), -1));
+      hDisplay();
     }
     else{
     platforms.add(new Platform((float)(random(0, width - 35)), -1));
     }
   }
+  
+  void hDisplay(){
+    PImage horizontal;
+    
+    horizontal = loadImage("light_blue_platform.png");
+    horizontal.resize(45, 11);
+    
+    for(int i=0; i<platforms.size(); i++){
+         image (horizontal, platforms.get(i).getX(), platforms.get(i).getY());
+    }
+  }
+    
    
   //monster stuff /////////////////////////////////////////////////////
   
